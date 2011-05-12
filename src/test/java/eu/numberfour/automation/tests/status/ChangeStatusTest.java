@@ -39,8 +39,7 @@ public class ChangeStatusTest extends AutomationBase {
         Authentication auth = new Authentication();
         auth.setEmail( Constants.EMAIL );
         auth.setPassword( Constants.PASSWORD );
-        
-        
+           
         LoginHelper.login( auth, selenium );
         
         Format formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss Z");
