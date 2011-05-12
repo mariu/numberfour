@@ -4,6 +4,9 @@
     <groupId>numberfour</groupId>
     <artifactId>numberfour</artifactId>
     <version>1.0</version>
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
     <packaging>jar</packaging>
     <name>numberfour</name>
     <url>http://maven.apache.org</url>
@@ -13,22 +16,42 @@
             <url>http://www.numberfour.eu</url>
         </developer>
     </developers>
+	<distributionManagement>
+        <repository>
+            <id>openqa-releases</id>
+            <url>dav:http://archiva.openqa.org/repository/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>openqa-snapshots</id>
+            <url>dav:http://archiva.openqa.org/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <connection>scm:svn:https://svn.openqa.org/svn/selenium-rc/trunk</connection>
+        <developerConnection>scm:svn:https://svn.openqa.org/svn/selenium-rc/trunk</developerConnection>
+        <url>https://svn.openqa.org/svn/selenium-rc/trunk</url>
+    </scm>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.1</version>
-            <scope>test</scope>
         </dependency>
 		<dependency>
             <groupId>org.seleniumhq.selenium.client-drivers</groupId>
             <artifactId>selenium-java-client-driver</artifactId>
-            <version>1.0.1</version>
-            <scope>test</scope>
+            <version>1.0.2</version>
+        </dependency>
+		<dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>2.0b3</version>
+			<scope>test</scope>
         </dependency>
     </dependencies>
     <build>
     	<defaultGoal>install</defaultGoal>
+		<sourceDirectory>src/eu/numberfour/automation</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -46,10 +69,38 @@
                 <version>2.5</version>
                 <configuration>
                     <includes>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>UTF-8</encoding>
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+	
+	<repositories>	
+		<repository>
+			<id>maven-central</id>
+			<url>http://search.maven.org</url>
+		</repository>
+		<repository>
+			<id>jboss-nexus</id>
+			<url>https://repository.jboss.org/nexus/</url>
+		</repository>
+		<repository>
+			<id>repository.jboss.org</id>
+			<name>JBoss Releases Repository</name>
+			<url>http://repository.jboss.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>	
+	</repositories>
+	
 </project>
+
+	

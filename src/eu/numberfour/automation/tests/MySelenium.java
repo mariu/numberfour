@@ -2,7 +2,7 @@
 // %name: MySelenium.java %
 // Desc :
 //
-// Copyright (©) http://functionaltestautomation.blogspot.com/2010/05/extending-default-selenium.html 
+// Copyright http://functionaltestautomation.blogspot.com/2010/05/extending-default-selenium.html 
 // @author Mahesh Narayanan
 // *****************************************************************************
 package eu.numberfour.automation.tests;

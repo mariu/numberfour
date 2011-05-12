@@ -2,7 +2,7 @@
 // %name: ChangeStatus.java %
 // Desc :
 // 
-// Copyright (©) n4
+// Copyright n4
 // @author Marius Ghiga
 //*****************************************************************************
 package eu.numberfour.automation.tests.status;

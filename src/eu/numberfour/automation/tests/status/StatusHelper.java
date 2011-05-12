@@ -2,17 +2,12 @@
 // %name: StatusHelper.java %
 // Desc :
 //
-// Copyright (©) n4
+// Copyright n4
 // @author
 // *****************************************************************************
 package eu.numberfour.automation.tests.status;
 
 import static org.junit.Assert.assertEquals;
-
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Formatter;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -33,8 +28,7 @@ public class StatusHelper
         selenium.click( "//li[@id='navItem_nf']/a/span[3]" );
         selenium.waitForPageToLoad( Constants.WAIT_TO_LOAD_TIME );
         
-        selenium.type( "//div[@id='contentArea']/div[@id='pagelet_composer']/div/div/div/form/div[2]/div[1]/div/div/div[1]/div/textarea",
-                       message );
+        selenium.type( "//div[@id='contentArea']/div[@id='pagelet_composer']/div/div/div/form/div[2]/div[1]/div/div/div[1]/div/textarea", message );
         selenium.click( "link=Everyone" );
         selenium.click( "link=Friends of Friends" );
         selenium.click( "//div/div/div/ul/li[2]/a/span" );
