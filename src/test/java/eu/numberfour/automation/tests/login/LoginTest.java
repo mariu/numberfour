@@ -5,17 +5,18 @@
 // Copyright n4
 // @author  Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.tests.login;
+package test.java.eu.numberfour.automation.tests.login;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import eu.numberfour.automation.model.Authentication;
-import eu.numberfour.automation.tests.AutomationBase;
-import eu.numberfour.automation.tests.login.LoginHelper;
-import eu.numberfour.automation.utils.Constants;
+import test.java.eu.numberfour.automation.model.Authentication;
+import test.java.eu.numberfour.automation.tests.AutomationBase;
+import test.java.eu.numberfour.automation.tests.login.LoginHelper;
+import test.java.eu.numberfour.automation.utils.Constants;
+
 
 public class LoginTest extends AutomationBase{
 
@@ -24,16 +25,16 @@ public class LoginTest extends AutomationBase{
     @Override
     public void setUp() throws Exception
     {
-      super.setUp();
-
-      
+        super.setUp(); 
+        // here we can overwrite functionality from AutomationBase class
     }
 
-    
-    
+    /**
+     * @throws Exception
+     */
     @Test
-    public void login( ) throws Exception {
-        
+    public void login( ) throws Exception 
+    {   
         // Authentication auth = LoginHelper.singUp( );     
         Authentication auth = new Authentication();
         auth.setEmail( Constants.EMAIL );
@@ -43,14 +44,28 @@ public class LoginTest extends AutomationBase{
         LoginHelper.login( auth, selenium );
         Assert.assertTrue( "Should be logged in!", LoginHelper.isLoggedIn( selenium ) );
         LoginHelper.logout( selenium );
-        
-        auth = new Authentication();
+    }
+
+    /**
+     * @throws Exception
+     */
+    @Test
+    public void loginWrongUser() throws Exception 
+    {
+        Authentication auth = new Authentication();
         auth.setEmail( "user_" + System.currentTimeMillis() );
         auth.setPassword( Constants.PASSWORD );
         LoginHelper.login( auth, selenium );
         // assert this failed because of wrong user
-        
-        auth = new Authentication();
+    }
+    
+    /**
+     * @throws Exception
+     */
+    @Test
+    public void loginWrongPassword() throws Exception 
+    {
+        Authentication auth = new Authentication();
         auth.setEmail( Constants.EMAIL );
         auth.setPassword( "wrong password" );
         LoginHelper.login( auth, selenium );
@@ -61,7 +76,8 @@ public class LoginTest extends AutomationBase{
     @Override
     public void tearDown() throws Exception
     {
-      super.tearDown(); 
+        // here we can overwrite functionality from AutomationBase class
+        super.tearDown(); 
     }
 
 }

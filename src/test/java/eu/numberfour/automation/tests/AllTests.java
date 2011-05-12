@@ -5,14 +5,15 @@
 // Copyright n4
 // @author Marius Ghiga
 // *****************************************************************************
-package eu.numberfour.automation.tests;
+package test.java.eu.numberfour.automation.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import eu.numberfour.automation.tests.login.LogoutTest;
-import eu.numberfour.automation.tests.login.LoginTest;
-import eu.numberfour.automation.tests.status.ChangeStatusTest;
+import test.java.eu.numberfour.automation.tests.login.LoginTest;
+import test.java.eu.numberfour.automation.tests.login.LogoutTest;
+import test.java.eu.numberfour.automation.tests.status.ChangeStatusTest;
+
 
 // specify a runner class: Suite.class
 @RunWith ( Suite.class )

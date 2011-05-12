@@ -1,13 +1,13 @@
 //*****************************************************************************
-// %name: Month.java %
+// %name: Sex.java %
 // Desc :
 // 
 // Copyright n4
-// @author Marius Ghiga  
+// @author  Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.model;
+package test.java.eu.numberfour.automation.model;
 
-public enum Month
+public enum Sex
 {
-    Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec;
+    Female, Male;
 }

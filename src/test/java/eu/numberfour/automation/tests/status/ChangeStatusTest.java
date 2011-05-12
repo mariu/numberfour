@@ -5,7 +5,7 @@
 // Copyright n4
 // @author Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.tests.status;
+package test.java.eu.numberfour.automation.tests.status;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -15,10 +15,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import eu.numberfour.automation.model.Authentication;
-import eu.numberfour.automation.tests.AutomationBase;
-import eu.numberfour.automation.tests.login.LoginHelper;
-import eu.numberfour.automation.utils.Constants;
+import test.java.eu.numberfour.automation.model.Authentication;
+import test.java.eu.numberfour.automation.tests.AutomationBase;
+import test.java.eu.numberfour.automation.tests.login.LoginHelper;
+import test.java.eu.numberfour.automation.utils.Constants;
+
 
 public class ChangeStatusTest extends AutomationBase {
     
@@ -27,9 +28,8 @@ public class ChangeStatusTest extends AutomationBase {
     @Override
     public void setUp() throws Exception
     {
-      super.setUp();
-
-      
+        super.setUp();
+        // here we can overwrite functionality from AutomationBase class
     }
     
     @Test
@@ -59,8 +59,9 @@ public class ChangeStatusTest extends AutomationBase {
     @After
     @Override
     public void tearDown() throws Exception
-    {
-      super.tearDown(); 
+    {        
+        // here we can overwrite functionality from AutomationBase class
+        super.tearDown();
     }
 }
 

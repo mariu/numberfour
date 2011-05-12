@@ -5,15 +5,16 @@
 // Copyright n4
 // @author Marius Ghiga
 // *****************************************************************************
-package eu.numberfour.automation.tests;
+package test.java.eu.numberfour.automation.tests;
 
 import org.junit.After;
 import org.junit.Before;
 
+import test.java.eu.numberfour.automation.utils.Constants;
+
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
 
-import eu.numberfour.automation.utils.Constants;
 
 
 
@@ -30,7 +31,6 @@ public class AutomationBase
     @Before
     public void setUp() throws Exception
     {
-        
         // startSelenium( Constants.SELENIUM_SERVER_HOST, Constants.SELENIUM_SERVER_PORT, Constants.BROSER_TYPE, Constants.BASE_URL );
         startSeleniumSauceLabs();
     }

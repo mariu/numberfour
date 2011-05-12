@@ -5,7 +5,7 @@
 // Copyright n4
 // @author Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.model;
+package test.java.eu.numberfour.automation.model;
 
 public class Status
 {

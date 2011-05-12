@@ -5,7 +5,7 @@
 // Copyright n4
 // @author  Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.utils;
+package test.java.eu.numberfour.automation.utils;
 
 
 public class AutomationHelper

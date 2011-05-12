@@ -5,13 +5,13 @@
 // Copyright n4
 // @author
 // *****************************************************************************
-package eu.numberfour.automation.tests.status;
+package test.java.eu.numberfour.automation.tests.status;
 
 import static org.junit.Assert.assertEquals;
+import test.java.eu.numberfour.automation.utils.Constants;
 
 import com.thoughtworks.selenium.Selenium;
 
-import eu.numberfour.automation.utils.Constants;
 
 public class StatusHelper
 {

@@ -5,7 +5,7 @@
 // Copyright  n4
 // @author  Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.utils;
+package test.java.eu.numberfour.automation.utils;
 
 //of course, most of these should be configurable and dynamically inserted at runtime.
 public final class Constants

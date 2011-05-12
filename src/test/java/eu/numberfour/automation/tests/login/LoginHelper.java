@@ -5,15 +5,16 @@
 // Copyright n4
 // @author  Marius Ghiga
 //*****************************************************************************
-package eu.numberfour.automation.tests.login;
+package test.java.eu.numberfour.automation.tests.login;
 
 import org.junit.Assert;
 
+import test.java.eu.numberfour.automation.model.Authentication;
+import test.java.eu.numberfour.automation.model.Month;
+import test.java.eu.numberfour.automation.utils.Constants;
+
 import com.thoughtworks.selenium.Selenium;
 
-import eu.numberfour.automation.model.Authentication;
-import eu.numberfour.automation.model.Month;
-import eu.numberfour.automation.utils.Constants;
 
 public class LoginHelper
 {

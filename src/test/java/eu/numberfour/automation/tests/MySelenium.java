@@ -5,7 +5,7 @@
 // Copyright http://functionaltestautomation.blogspot.com/2010/05/extending-default-selenium.html 
 // @author Mahesh Narayanan
 // *****************************************************************************
-package eu.numberfour.automation.tests;
+package test.java.eu.numberfour.automation.tests;
 
 import com.thoughtworks.selenium.DefaultSelenium;
 
