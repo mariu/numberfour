@@ -19,7 +19,7 @@ public final class Constants
     public static final String WAIT_TO_LOAD_TIME = "30000";
     
 
-    // credentials
+    // FB credentials
     public static final String EMAIL = "marius.ghiga@gmail.com";
     public static final String PASSWORD = "numberfour";
     

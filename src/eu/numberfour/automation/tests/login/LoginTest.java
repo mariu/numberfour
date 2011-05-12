@@ -39,9 +39,9 @@ public class LoginTest extends AutomationBase{
         auth.setEmail( Constants.EMAIL );
         auth.setPassword( Constants.PASSWORD );
         
-        Assert.assertTrue( "Should be logged out!", LoginHelper.isLoggedOut() );
+        Assert.assertTrue( "Should be logged out!", LoginHelper.isLoggedOut( selenium ) );
         LoginHelper.login( auth, selenium );
-        Assert.assertTrue( "Should be logged in!", LoginHelper.isLoggedIn() );
+        Assert.assertTrue( "Should be logged in!", LoginHelper.isLoggedIn( selenium ) );
         LoginHelper.logout( selenium );
         
         auth = new Authentication();

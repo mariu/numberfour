@@ -36,9 +36,9 @@ public class LogoutTest extends AutomationBase{
         
         // if we are here, login is already tested
         LoginHelper.login( auth, selenium );
-        Assert.assertTrue( "Should be logged in!", LoginHelper.isLoggedIn() );
+        Assert.assertTrue( "Should be logged in!", LoginHelper.isLoggedIn( selenium ) );
         LoginHelper.logout( selenium );
-        Assert.assertTrue( "Should be logged out!", LoginHelper.isLoggedOut() );
+        Assert.assertTrue( "Should be logged out!", LoginHelper.isLoggedOut( selenium ) );
     }
     
     

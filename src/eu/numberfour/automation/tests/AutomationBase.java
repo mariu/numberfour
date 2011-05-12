@@ -15,6 +15,13 @@ import com.thoughtworks.selenium.Selenium;
 
 import eu.numberfour.automation.utils.Constants;
 
+
+
+/**
+ * This is extended by all test classes
+ * Should contain utility methods related so selenium, 
+ * eventually override some default selenium behavior by extending DefaultSelenium class
+ */
 public class AutomationBase
 {
 
@@ -23,7 +30,9 @@ public class AutomationBase
     @Before
     public void setUp() throws Exception
     {
+        
         startSelenium( Constants.SELENIUM_SERVER_HOST, Constants.SELENIUM_SERVER_PORT, Constants.BROSER_TYPE, Constants.BASE_URL );
+        // startSeleniumSauceLabs();
     }
     
     @After

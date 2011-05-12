@@ -1,15 +1,18 @@
-//*****************************************************************************
+// *****************************************************************************
 // %name: StatusHelper.java %
 // Desc :
-// 
-// Copyright (©) camLine GmbH
-// @author  
-//*****************************************************************************
+//
+// Copyright (©) n4
+// @author
+// *****************************************************************************
 package eu.numberfour.automation.tests.status;
 
 import static org.junit.Assert.assertEquals;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Formatter;
 
 import com.thoughtworks.selenium.Selenium;
 
@@ -17,40 +20,47 @@ import eu.numberfour.automation.utils.Constants;
 
 public class StatusHelper
 {
-    
+
     /**
      * @throws Exception
      */
-    public static void changeStatus ( Selenium selenium ) throws Exception 
+    public static void changeStatus( Selenium selenium, String message ) throws Exception
     {
         // Pressing 'News Feed' link again as this might not always be the default selected page
-        selenium.open("/?sk=nf");
-        selenium.waitForPageToLoad(Constants.WAIT_TO_LOAD_TIME);
-        selenium.click("//li[@id='navItem_nf']/a/span[3]");
-        selenium.waitForPageToLoad("30000");
-        String expectedText = new Date().toString();
-        selenium.type("//div[@id='contentArea']/div[@id='pagelet_composer']/div/div/div/form/div[2]/div[1]/div/div/div[1]/div/textarea", expectedText);
-        selenium.click("link=Everyone");
-        selenium.click("link=Friends of Friends");
-        selenium.click("//div/div/div/ul/li[2]/a/span");
-        selenium.click("//input[@value='Share']");
+        // Eventually press Home button before
+        selenium.open( "/?sk=nf" );
+        selenium.waitForPageToLoad( Constants.WAIT_TO_LOAD_TIME );
+        selenium.click( "//li[@id='navItem_nf']/a/span[3]" );
+        selenium.waitForPageToLoad( Constants.WAIT_TO_LOAD_TIME );
+        
+        selenium.type( "//div[@id='contentArea']/div[@id='pagelet_composer']/div/div/div/form/div[2]/div[1]/div/div/div[1]/div/textarea",
+                       message );
+        selenium.click( "link=Everyone" );
+        selenium.click( "link=Friends of Friends" );
+        selenium.click( "//div/div/div/ul/li[2]/a/span" );
+        selenium.click( "//input[@value='Share']" );
 
-        Thread.sleep( 1000 ); // remember 'waitForTextPresent'
-        
-        selenium.isTextPresent(expectedText);
-        String actualText = selenium.getText( "//ul[@id='home_stream']/li/div/div/div/div/h6/span");
-        assertEquals( "Status message not found: ", expectedText, actualText );
-        
-        // TODO: move verification to a separate method
-        
+        Thread.sleep( 1000 ); // change this, remember 'waitForTextPresent'
+
+        StatusHelper.checkStatusMessageIsAdded( selenium, message );
+        StatusHelper.removeStatusMessage( selenium );
+
     }
-    
-    public static Boolean checkStatusMessageIsAdded (Selenium selenium, String message )
+
+    public static Boolean checkStatusMessageIsAdded( Selenium selenium, String message )
     {
-        return true;
+        // this only checks for the first 'div'
+        // to make it more general, use xpathcount and search for all 'div' messages
+        // then iterate to find the nedded one
+        
+        selenium.isTextPresent( message );
+        String actualMessage = selenium.getText( "//ul[@id='home_stream']/li/div/div/div/div/h6/span" );
+        assertEquals( "Status message not found: ", message, actualMessage );
+        
+        return true; // not useful for now
     }
-    
-    public static void removeStatusMessage ( Selenium selenium ) throws Exception
+
+    public static void removeStatusMessage( Selenium selenium ) throws Exception
     {
         // xpath count
         // parse...and identify, then remove

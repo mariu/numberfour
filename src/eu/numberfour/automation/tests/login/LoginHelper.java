@@ -26,6 +26,7 @@ public class LoginHelper
         // validations: just message not asserts ?
         if ( auth == null )
         {
+            System.err.println( "Authentication object is null" );
             Assert.fail( "Authentication object is null" );
         }
         
@@ -60,17 +61,31 @@ public class LoginHelper
     /**
      * @return
      */
-    public static Boolean isLoggedIn ()
+    public static Boolean isLoggedIn ( Selenium selenium )
     {
-        return true;
+        Boolean result = true;
+
+        if ( !selenium.isElementPresent( "link=Home" ) || !selenium.isElementPresent( "//input[@value='Logout']" ) )
+        {
+            result = false;
+        }
+
+        return result;
     }
     
     /**
      * @return
      */
-    public static Boolean isLoggedOut ()
+    public static Boolean isLoggedOut ( Selenium selenium )
     {
-        return true;
+        Boolean result = true;
+
+        if ( !selenium.isElementPresent( "link=exact:Forgot your password?" ) || !selenium.isElementPresent( "//input[@value='Login']" ) )
+        {
+            result = false;
+        }
+
+        return result;
     }
     
     /**

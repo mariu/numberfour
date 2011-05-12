@@ -7,6 +7,10 @@
 //*****************************************************************************
 package eu.numberfour.automation.tests.status;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +42,11 @@ public class ChangeStatusTest extends AutomationBase {
         
         
         LoginHelper.login( auth, selenium );
-        StatusHelper.changeStatus( selenium );       
+        
+        Format formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss Z");
+        String message = formatter.format( new Date() );
+        
+        StatusHelper.changeStatus( selenium, message );       
         LoginHelper.logout( selenium );
 // TODO: add verifications        
         
