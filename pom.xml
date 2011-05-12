@@ -46,7 +46,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-server</artifactId>
             <version>2.0b3</version>
-			<scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -72,7 +71,7 @@
 						<source>1.6</source>
 						<target>1.6</target>
 						<encoding>UTF-8</encoding>
-                        <include>**/*Test.java</include>
+                        <include>src/eu/numberfour/automation/tests/AllTests.java</include>
                     </includes>
                 </configuration>
             </plugin>
@@ -80,10 +79,6 @@
     </build>
 	
 	<repositories>	
-		<repository>
-			<id>maven-central</id>
-			<url>http://search.maven.org</url>
-		</repository>
 		<repository>
 			<id>jboss-nexus</id>
 			<url>https://repository.jboss.org/nexus/</url>

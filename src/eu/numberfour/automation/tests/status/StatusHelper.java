@@ -33,12 +33,8 @@ public class StatusHelper
         selenium.click( "link=Friends of Friends" );
         selenium.click( "//div/div/div/ul/li[2]/a/span" );
         selenium.click( "//input[@value='Share']" );
-
+        
         Thread.sleep( 1000 ); // change this, remember 'waitForTextPresent'
-
-        StatusHelper.checkStatusMessageIsAdded( selenium, message );
-        StatusHelper.removeStatusMessage( selenium );
-
     }
 
     public static Boolean checkStatusMessageIsAdded( Selenium selenium, String message )

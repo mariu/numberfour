@@ -46,12 +46,12 @@ public class ChangeStatusTest extends AutomationBase {
         Format formatter = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss Z");
         String message = formatter.format( new Date() );
         
-        StatusHelper.changeStatus( selenium, message );       
-        LoginHelper.logout( selenium );
-// TODO: add verifications        
+        StatusHelper.changeStatus( selenium, message );  
         
-    
-
+        StatusHelper.checkStatusMessageIsAdded( selenium, message );
+        StatusHelper.removeStatusMessage( selenium );
+        
+        LoginHelper.logout( selenium );
     }
 
     

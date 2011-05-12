@@ -31,8 +31,8 @@ public class AutomationBase
     public void setUp() throws Exception
     {
         
-        startSelenium( Constants.SELENIUM_SERVER_HOST, Constants.SELENIUM_SERVER_PORT, Constants.BROSER_TYPE, Constants.BASE_URL );
-        // startSeleniumSauceLabs();
+        // startSelenium( Constants.SELENIUM_SERVER_HOST, Constants.SELENIUM_SERVER_PORT, Constants.BROSER_TYPE, Constants.BASE_URL );
+        startSeleniumSauceLabs();
     }
     
     @After
